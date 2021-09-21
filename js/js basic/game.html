@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>game sederhana</title>
+</head>
+
+<body>
+  <script>
+    // suit jawa game
+
+
+    // var tanya = true;
+    // while (tanya) {
+
+    //   var p = prompt('pilih : gajah, orang, semut');
+
+    //   var comp = Math.random();
+
+    //   if (comp < 0.34) {
+    //     comp = 'gajah';
+    //   } else if (comp >= 0.34 && comp < 0.67) {
+    //     comp = 'semut';
+    //   } else {
+    //     comp = 'orang'
+    //   }
+
+    //   var hasil = '';
+
+    //   if (p == comp) {
+    //     hasil = ' seri'
+    //   } else if (p == 'gajah') {
+    //     // if(comp == 'semut'){
+    //     //   hasil = 'kalah';
+    //     // }else{
+    //     //   hasil = 'menang';
+    //     // }
+    //     hasil = (comp == 'semut') ? ' menang' : ' kalah';
+    //   } else if (p == 'orang') {
+    //     if (comp == 'semut') {
+    //       hasil = ' menang';
+    //     } else {
+    //       hasil = ' kalah';
+    //     }
+    //   } else if (p == 'semut') {
+    //     hasil = (comp == 'gajah') ? ' menang' : ' kalah';
+    //   } else {
+    //     hasil = ' anda memasukan clue yang salah';
+    //   }
+
+    //   alert('kamu memilih : ' + p + ' dam komputer memilih : ' + comp + ' \n maka hasilnya : kamu' + hasil);
+
+    //   tanya = confirm('main lagi? ');
+    // }
+
+    // alert('terima kasih sudah memain...');
+
+
+
+
+
+    // game tebak angka
+
+    var sayAsk = true;
+
+    while (sayAsk) {
+      var p = prompt('Choose : 1 - 10');
+
+      var comp = Math.floor(Math.random() * 10) + 1;
+
+      // if (comp >= 0 && comp < 0.1) {
+      //   comp = '1';
+      // } else if (comp >= 0.1 && comp < 0.2) {
+      //   comp = '2';
+      // } else if (comp >= 0.2 && comp < 0.3) {
+      //   comp = '3';
+      // } else if (comp >= 0.3 && comp < 0.4) {
+      //   comp = '4';
+      // } else if (comp >= 0.4 && comp < 0.5) {
+      //   comp = '5';
+      // } else if (comp >= 0.5 && comp < 0.6) {
+      //   comp = '6';
+      // } else if (comp >= 0.6 && comp < 0.7) {
+      //   comp = '7';
+      // } else if (comp >= 0.7 && comp < 0.8) {
+      //   comp = '8';
+      // } else if (comp >= 0.8 && comp < 0.9) {
+      //   comp = '9';
+      // } else if (comp >= 0.9 && comp < 1) {
+      //   comp = '10';
+      // } else {
+      //   comp = '0';
+      // }
+
+      var answer = '';
+
+      if (p == comp) {
+        answer = ' The Answer is Correct';
+      } else {
+        answer = ' The Answer is Wrong, Choose 1 - 10 Again';
+      }
+
+      alert('Your Choise is : ' + p + ' And The Computer Choise is : ' + comp + ' \n So : ' + answer);
+
+      sayAsk = confirm('Play Again? ');
+
+    }
+
+    alert('Thanks You For Play...');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>latihan DOM</title>
+  <style>
+    body,
+    html {
+      text-align: center;
+      padding: 50px 20px;
+      height: 100vh;
+      /* display: flex;
+      flex-direction: column;
+      justify-content: space-around; */
+    }
+
+    .dark {
+      background-color: #222;
+    }
+
+    h1 {
+      text-shadow: 0 0 2px #eee;
+    }
+
+    input[type="range"] {
+      appearance: none;
+      border: 1px solid #111;
+      border-radius: 5px;
+      height: 3px;
+      width: 250px;
+      margin: 20px auto;
+      cursor: pointer;
+    }
+
+    input[type="range"]#satu {
+      background-color: rgb(255, 0, 0);
+    }
+
+    input[type="range"]#dua {
+      background-color: rgb(0, 255, 0);
+    }
+
+    input[type="range"]#tiga {
+      background-color: rgb(0, 0, 255);
+    }
+
+    button {
+      margin: auto 16px;
+      cursor: pointer;
+      padding: 5px;
+      font-weight: bolder;
+      text-transform: uppercase;
+      border-radius: 5px;
+      background-color: rgb(78, 139, 231);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Playing by Color</h1>
+  <button id="tombol">change color</button>
+  <br><br>
+  <input type="range" id="satu" min="0" max="255" value="255"><br>
+  <input type="range" id="dua" min="0" max="255" value="255"><br>
+  <input type="range" id="tiga" min="0" max="255" value="255"><br>
+
+  <script>
+    const btn = document.querySelector('button#tombol');
+    btn.addEventListener('click', function () {
+      // const bd = document.querySelector('body');
+      // bd.style.backgroundColor = 'lightblue';
+      // document.body.style.backgroundColor = 'lightblue';
+      // document.body.setAttribute('class', 'biru-muda');
+      document.body.classList.toggle('dark');
+    });
+
+    const button1 = document.createElement('button');
+    const textButton1 = document.createTextNode('random color');
+    button1.appendChild(textButton1);
+    btn.after(button1);
+
+    button1.addEventListener('click', function () {
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);
+
+      document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+    });
+
+    const input1 = document.querySelector('input#satu')
+    const input3 = document.querySelector('input#tiga')
+    const input2 = document.querySelector('input#dua')
+
+    input1.addEventListener('input', function () {
+      const r = input1.value;
+      const g = input2.value;
+      const b = input3.value;
+
+      document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+    });
+    input2.addEventListener('input', function () {
+      const r = input1.value;
+      const g = input2.value;
+      const b = input3.value;
+
+      document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+    });
+    input3.addEventListener('input', function () {
+      const r = input1.value;
+      const g = input2.value;
+      const b = input3.value;
+
+      document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+    });
+
+    // document.body.addEventListener('mousemove', function (e) {
+    //   const x = Math.ceil((e.clientX / window.innerWidth) * 255);
+    //   const y = Math.ceil((e.clientY / window.innerHeight) * 255);
+
+    //   document.body.style.backgroundColor = 'rgb(' + x + ',' + y + ',' + x + y + ')';
+    // });
+  </script>
+</body>
+
+
+</html>

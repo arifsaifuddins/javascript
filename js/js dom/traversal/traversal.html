@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Traversal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(148, 219, 169);
+    }
+
+    .card {
+      display: flex;
+      height: 130px;
+      width: 450px;
+      margin: 40px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #ccc;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 60px;
+      box-shadow: 3px 3px 3px #555, -3px -3px 3px #fff;
+    }
+
+    .card img {
+      width: 90px;
+      height: 90px;
+      border: 3px solid #111;
+      border-radius: 50%;
+      box-shadow: 0 0 3px #555, -3px -3px 3px #fff;
+      transition: .3s;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .nama {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      height: 70px;
+      justify-content: space-between;
+    }
+
+    .nama h3 {
+      font-size: 25px;
+      font-family: cursive;
+    }
+
+    .close {
+      font-size: 30px;
+      font-family: Arial;
+      font-weight: bolder;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #f00;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .nama .harga {
+      font-size: 20px;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="image/mkn1.png" alt="makan">
+    <div class="nama">
+      <h3 class="jenis">Nasi Liwet Spesial</h3>
+      <span class="harga">IDR 20.000.00</span>
+    </div>
+    <!-- <span class="close">X</span> -->
+    <a href="" class="close">X</a>
+  </div>
+
+  <div class="card">
+    <img src="image/mkn2.png" alt="makan">
+    <div class="nama">
+      <h3 class="jenis">Nasi Padang Spesial</h3>
+      <span class="harga">IDR 25.000.00</span>
+    </div>
+    <!-- <span class="close">X</span> -->
+    <a href="" class="close">X</a>
+  </div>
+
+  <div class="card">
+    <img src="image/mkn3.png" alt="makan">
+    <div class="nama">
+      <h3 class="jenis">Nasi Opor Spesial</h3>
+      <span class="harga">IDR 17.000.00</span>
+    </div>
+    <!-- <span class="close">X</span> -->
+    <a href="" class="close">X</a>
+  </div>
+
+  <div class="card">
+    <img src="image/mkn4.png" alt="makan">
+    <div class="nama">
+      <h3 class="jenis">Syawarma Spesial</h3>
+      <span class="harga">IDR 15.000.00</span>
+    </div>
+    <!-- <span class="close">X</span> -->
+    <a href="" class="close">X</a>
+  </div>
+
+  <script src="traversal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suit Japan</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      width: 400px;
+      margin: 100px auto;
+      border: 5px solid #111;
+      border-radius: 30px;
+      text-align: center;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #f00;
+      font-weight: bolder;
+      padding: 20px;
+    }
+
+    .judul {
+      background-color: darksalmon;
+      border-radius: 25px 25px 0 0;
+      border-bottom: 5px solid #111;
+    }
+
+    img.rock,
+    img.paper,
+    img.scissor {
+      width: 80px;
+      height: 80px;
+      border: 5px solid #111;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .5s;
+    }
+
+    img.rock:hover,
+    img.paper:hover,
+    img.scissor:hover {
+      transform: scale(1.1);
+    }
+
+    .computer {
+      padding: 40px;
+      background-color: goldenrod;
+      padding: 40px 40px 70px 40px;
+      border-bottom: 5px solid #111;
+    }
+
+    .computer img {
+      width: 130px;
+      height: 130px;
+    }
+
+    .score {
+      background-color: honeydew;
+      width: 170px;
+      height: 70px;
+      border: 5px solid #111;
+      border-radius: 20px;
+      position: absolute;
+      top: 300px;
+      right: 105px;
+      font-size: 30px;
+      line-height: 70px;
+      color: #f00;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bolder;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      letter-spacing: 3px;
+    }
+
+    .player {
+      width: 100%;
+      background-color: dodgerblue;
+      border-radius: 0 0 25px 25px;
+    }
+
+    .player ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 90px 40px 40px 40px;
+    }
+
+    ul li {
+      list-style: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="judul">
+      <h1>Rock Paper Scissor </h1>
+    </div>
+    <div class="computer">
+      <img src="rock.png" class="computer1">
+    </div>
+    <div class="score"></div>
+    <div class="player">
+      <ul>
+        <li><img src="rock.png" class="rock"></li>
+        <li><img src="paper.png" class="paper"></li>
+        <li><img src="scissor.png" class="scissor"></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- <script src="main.js"></script> -->
+  <script>
+    function getComputerChoose() {
+      const comp = Math.random();
+      if (comp < 0.34) return 'rock';
+      if (comp >= 0.34 && comp < 0.67) return 'paper';
+      return 'scissor';
+    }
+
+    function getRules(comp, player) {
+      if (player == comp) return 'balance';
+      if (player == 'rock') return (comp == 'paper') ? 'lose' : 'win';
+      if (player == 'paper') return (comp == 'rock') ? 'win' : 'lose';
+      if (player == 'scissor') return (comp == 'paper') ? 'win' : 'lose';
+    }
+
+    function roll() {
+      const imgComp = document.querySelector('img.computer1');
+      const image = ['rock', 'paper', 'scissor'];
+      let i = 0;
+      const startTime = new Date().getTime();
+      setInterval(function () {
+        if (new Date().getTime() - startTime > 1000) {
+          clearInterval;
+          return;
+        }
+        imgComp.setAttribute('src', image[i++] + '.png');
+        if (i == image.length) i = 0;
+      }, 200);
+    }
+
+    const pChoose = document.querySelectorAll('li img');
+    pChoose.forEach(function (choo) {
+      choo.addEventListener('click', function () {
+        const cComp = getComputerChoose();
+        const cPlayer = choo.className;
+        const cRules = getRules(cComp, cPlayer);
+
+        roll();
+
+        setTimeout(function () {
+          const imgComp = document.querySelector('img.computer1');
+          imgComp.setAttribute('src', cComp + '.png');
+
+          const score = document.querySelector('.score');
+          score.innerHTML = cRules;
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+
+</html>
