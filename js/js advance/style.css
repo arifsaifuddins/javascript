@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: lightblue;
+}
+
+/* BOX */
+/* .box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #111;
+  margin: 50px auto;
+  padding: 50px;
+  transition:
+    .3s width,
+    .3s height .3s,
+    .3s margin-top .3s,
+    1s background-color;
+}
+
+
+.size {
+  width: 150px;
+  height: 150px;
+  margin-top: 25px;
+}
+
+.caption {
+  background-color: #111;
+} */
+
+/* SPREAD */
+h1.contoh-animasi {
+  font-size: 80px;
+  color: #fff;
+  margin: 50px 0 0 0;
+  font-family: fantasy;
+  letter-spacing: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+h1 span {
+  display: inline-block;
+  transition: .6s;
+}
+
+h1 span:hover {
+  transform: scale(2) translateZ(10px) rotate(380deg);
+  text-shadow: 2px 2px 0 #f00;
+  color: #555;
+}

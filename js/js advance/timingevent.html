@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timing Function</title>
+</head>
+
+<body>
+  <h1 id="judul">Hello World</h1>
+
+  <!-- <button id="tombol">berhenti</button>
+  <button id="tombol1">berhenti</button> -->
+
+
+  <script>
+    // // timing event
+
+    // // 1. setTimeout
+    // setTimeout(tampilkanPesan, 3000);
+
+    // function tampilkanPesan() {
+    //   console.log('hello world');
+    // }
+
+    // setTimeout(function () {
+    //   console.log('hello world1');
+    // }, 2000);
+
+    // const time = setTimeout(function () {
+    //   console.log('hello world1');
+    // }, 2000);
+
+    // const tombol = document.getElementById('tombol');
+    // tombol.addEventListener('click', function () {
+    //   clearTimeout(time);
+    //   console.log('selesai');
+    // });
+
+
+    // // 2. setInterval (berulang2 dengan waktu)
+    // setInterval(function () {
+    //   console.log('hello world1');
+    // }, 2000);
+
+    // const time1 = setInterval(function () {
+    //   console.log('hello world1');
+    // }, 2000);
+
+    // const tombol1 = document.getElementById('tombol1');
+    // tombol1.addEventListener('click', function () {
+    //   clearInterval(time1);
+    //   console.log('selesai');
+    // });
+
+
+    // program hitung mundur sederhana
+
+    const hariTujuan = new Date('Sept 20, 2021 23:25:00').getTime();
+    const hitungMundur = setInterval(function () {
+      const hariIni = new Date().getTime();
+      const selisih = hariTujuan - hariIni;
+
+      const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+      const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+      const menit = Math.floor(selisih % (1000 * 60 * 60) / (1000 * 60));
+      const detik = Math.floor(selisih % (1000 * 60) / 1000);
+
+      const waktu = document.getElementById('judul');
+      waktu.innerHTML = 'waktu anda tinggal : ' + hari + ' hari, ' + jam + ' : ' + menit + ' : ' + detik;
+
+      if (selisih <= 0) {
+        clearInterval(hitungMundur);
+        waktu.innerHTML = 'waktu sudah habis';
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>
