@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage</title>
+  <style>
+    body {
+      background-color: antiquewhite;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>...</h1>
+  <input type="text" placeholder="input a color..."><br>
+  <button type="submit">Change background</button>
+
+  <script>
+    const h1 = document.querySelector('h1'),
+      input = document.querySelector('input'),
+      btn = document.querySelector('button');
+
+    h1.innerHTML = localStorage.getItem('name');
+    document.body.style.backgroundColor = localStorage.getItem('satu');
+    btn.addEventListener('click', () => {
+      h1.innerHTML = input.value;
+      document.body.style.backgroundColor = input.value;
+      localStorage.setItem('name', input.value);
+      localStorage.setItem('satu', input.value);
+    })
+  </script>
+</body>
+
+</html>
