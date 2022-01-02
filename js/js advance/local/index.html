@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <h1>JavaScript LocalStorage</h1>
+
+    <fieldset>
+      <legend>SetItem in JavaScript</legend>
+      <input type="text" id="setKey" placeholder="input a key" required>
+      <input type="text" id="setValue" placeholder="input a value" required><br>
+      <button>insert data</button>
+      <input id="output" type="text" readonly placeholder="output">
+    </fieldset>
+
+    <h1>JavaScript Modules</h1>
+
+    <div class="modules"></div>
+
+    <script type="module" src="./main.js"></script>
+    <script type="module">
+      // // localstorage
+      // // setItem(), getItem(), removeItem()
+
+      // // must with key and value
+      // localStorage.setItem('nama', 'arief saifuddien');
+      // localStorage.setItem('age', 22);
+      // localStorage.setItem('kuliah', 'IUA');
+
+      // // calling with key
+      // console.log(localStorage.getItem('age'));
+
+      // // access a key
+      // console.log(localStorage.key(1));
+
+      // // remove one off keys with key
+      // // localStorage.removeItem('nama');
+
+      // // remove all
+      // localStorage.clear();
+
+      let key = document.querySelector('#setKey');
+      let value = document.querySelector('#setValue');
+      let btn = document.querySelector('fieldset button');
+      let output = document.querySelector('#output');
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem(key.value, value.value);
+
+        keys = localStorage.key(0);
+        output.value = `${keys} = ` + localStorage.getItem(keys) + ', ';
+      });
+
+      for (let i = 0; i < localStorage.length; i++) {
+
+        keys = localStorage.key(i);
+        output.value += `${keys} = ` + localStorage.getItem(keys) + ', ';
+      }
+    </script>
+  </body>
+
+</html>

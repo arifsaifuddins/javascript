@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+}
+
+input,
+button {
+  padding: 5px;
+  margin: 10px;
+}
+
+fieldset {
+  width: max-content;
+  margin: 40px auto;
+}
+
+#output {
+  width: 275px;
+  outline: none;
+}
